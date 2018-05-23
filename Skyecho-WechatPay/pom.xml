@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>Skyecho-WechatPay</groupId>
+    <artifactId>Skyecho-WechatPay</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- 微信支付接口适配器start -->
+        <dependency>
+            <groupId>Skyecho-WeChatPayAdaptor</groupId>
+            <artifactId>Skyecho-WeChatPayAdaptor</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- 微信支付接口适配器end -->
+        <!-- fastjson start-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.24</version>
+        </dependency>
+        <!-- fastjson end-->
+        <!-- LogManager start -->
+        <dependency>
+            <groupId>gohnstudio-common-log</groupId>
+            <artifactId>gohnstudio-common-log</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- LogManager end -->
+
+        <!-- 微信原生支付 start-->
+        <dependency>
+            <groupId>WeixinPay</groupId>
+            <artifactId>WeixinPay</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+		<!-- 微信原生支付 end -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                    <compilerArguments>
+                        <verbose/>
+                        <bootclasspath>${java.home}/lib/rt.jar;${java.home}/lib/jce.jar</bootclasspath>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>skyecho</id>
+            <name>skyecho</name>
+            <url>https://www.bflvx.com/maven/content/groups/public/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>bflvx-release</id>
+            <name>User Project Release</name>
+            <url>https://www.bflvx.com/maven/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>bflvx-snapshots</id>
+            <name>User Project SNAPSHOTS</name>
+            <url>https://www.bflvx.com/maven/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
